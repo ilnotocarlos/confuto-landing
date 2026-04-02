@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useVersion } from "@/components/version-context";
 
 const navLinks = [
   { label: "Come funziona", href: "#come-funziona" },
@@ -13,6 +14,7 @@ const navLinks = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { version, toggle } = useVersion();
 
   return (
     <nav className="sticky top-0 z-50">
@@ -34,7 +36,27 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          {/* Version switch */}
+          <button
+            onClick={toggle}
+            className="flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-md px-3 py-1.5 text-xs font-medium text-charcoal/60 hover:text-forest transition-colors duration-200"
+          >
+            <span className={version === "v1" ? "text-forest font-bold" : ""}>
+              V1
+            </span>
+            <div className="relative w-8 h-4 rounded-full bg-sand/60">
+              <div
+                className={`absolute top-0.5 w-3 h-3 rounded-full bg-forest transition-all duration-200 ${
+                  version === "v2" ? "left-[18px]" : "left-0.5"
+                }`}
+              />
+            </div>
+            <span className={version === "v2" ? "text-forest font-bold" : ""}>
+              V2
+            </span>
+          </button>
+
           <Button className="bg-forest text-cream rounded-full px-6 py-2 h-auto text-sm font-medium hover:bg-forest/90 active:scale-[0.98] transition-all duration-200">
             Prenota una call
             <ArrowUpRight className="ml-1.5 size-3.5" />
@@ -64,6 +86,12 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          <button
+            onClick={toggle}
+            className="block text-sm text-charcoal/60 hover:text-forest transition-colors duration-200"
+          >
+            Passa a {version === "v1" ? "V2" : "V1"}
+          </button>
           <Button className="w-full bg-forest text-cream rounded-full px-6 py-3 h-auto text-base font-medium hover:bg-forest/90 active:scale-[0.98] transition-all duration-200 mt-4">
             Prenota una call
             <ArrowUpRight className="ml-1.5 size-4" />
