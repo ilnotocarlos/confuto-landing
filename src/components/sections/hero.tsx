@@ -4,25 +4,15 @@ import { ArrowUpRight } from "lucide-react";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-cream overflow-hidden">
-      {/* Organic blobs */}
-      <svg
-        className="absolute -top-20 -right-32 w-[500px] h-[500px] opacity-[0.1]"
-        viewBox="0 0 500 500"
-      >
-        <circle cx="250" cy="250" r="200" fill="#C8E6D0" />
-      </svg>
-      <svg
-        className="absolute -bottom-16 -left-24 w-[400px] h-[400px] opacity-[0.08]"
-        viewBox="0 0 400 400"
-      >
-        <ellipse cx="200" cy="200" rx="180" ry="150" fill="#F5C1B5" />
-      </svg>
-      <svg
-        className="absolute top-1/3 left-1/2 w-[300px] h-[300px] opacity-[0.06]"
-        viewBox="0 0 300 300"
-      >
-        <circle cx="150" cy="150" r="120" fill="#F6E8A0" />
-      </svg>
+      {/* Dot grid pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.12]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #1B3A2D 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">
         <h1 className="font-heading text-[3rem] md:text-[4rem] leading-[1.1] tracking-tight text-forest">

@@ -15,19 +15,19 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
         <a href="#" className="font-heading text-xl font-bold text-forest">
           Confuto
         </a>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop links in single pill */}
+        <div className="hidden md:flex items-center rounded-full bg-white/80 backdrop-blur-md px-2 py-1.5 gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-charcoal/70 hover:text-forest transition-colors duration-200"
+              className="text-sm text-charcoal/70 hover:text-forest rounded-full px-4 py-1.5 transition-colors duration-200"
             >
               {link.label}
             </a>
