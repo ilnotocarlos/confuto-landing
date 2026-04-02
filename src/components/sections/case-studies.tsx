@@ -4,7 +4,6 @@ import { useRef } from "react";
 
 const cases = [
   {
-    icon: "\uD83C\uDF5D",
     sector: "Food",
     type: "Idea Sprint",
     challenge:
@@ -18,7 +17,6 @@ const cases = [
     author: "Marco M., Founder, startup food",
   },
   {
-    icon: "\uD83D\uDC84",
     sector: "Beauty",
     type: "Idea Sprint",
     challenge:
@@ -32,7 +30,6 @@ const cases = [
     author: "Carlotta C., Marketing Manager, azienda beauty",
   },
   {
-    icon: "\u2708\uFE0F",
     sector: "Travel",
     type: "Fix It",
     challenge:
@@ -74,9 +71,9 @@ export function CaseStudiesSection() {
               key={i}
               className="bg-white rounded-2xl border border-sand/30 p-8 min-w-[85vw] md:min-w-0 snap-center flex flex-col transition-transform duration-200 hover:scale-[1.02]"
             >
-              {/* Top: emoji + chips */}
-              <div className="flex items-center gap-2 mb-6">
-                <span className="text-2xl">{c.icon}</span>
+              {/* Top: placeholder icon + sector */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 rounded-full bg-sand/50 shrink-0" />
                 <span className="text-sm text-charcoal/70">
                   {c.sector} &middot; {c.type}
                 </span>

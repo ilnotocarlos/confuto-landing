@@ -5,7 +5,7 @@ import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { ProductsSection } from "@/components/sections/products";
 import { DifferenceSection } from "@/components/sections/difference";
 import { CaseStudiesSection } from "@/components/sections/case-studies";
-import { AboutSection } from "@/components/sections/about";
+// import { AboutSection } from "@/components/sections/about";
 import { SectorsSection } from "@/components/sections/sectors";
 import { FinalCtaSection } from "@/components/sections/final-cta";
 import { Footer } from "@/components/sections/footer";
@@ -21,7 +21,7 @@ export default function Home() {
         <ProductsSection />
         <DifferenceSection />
         <CaseStudiesSection />
-        <AboutSection />
+        {/* <AboutSection /> */}
         <SectorsSection />
         <FinalCtaSection />
       </main>
