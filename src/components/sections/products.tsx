@@ -8,42 +8,42 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-const ideaSprintProblems = [
-  "vuoi generare nuove idee",
-  "vuoi tradurre i concept in idee",
-  "hai una nuova idea per un servizio/prodotto/processo e vuoi vederne un prototipo",
+const ideaSprintWhen = [
+  "generazione di nuove idee",
+  "vuoi tradurre le idee in concept chiari",
+  "vuoi vederne un rapido prototipo",
   "vuoi scegliere meglio ed evitare errori costosi",
-  "vuoi far emergere le idee dai team",
-  "altro (il mondo è bello perché vario)",
+  "vuoi far collaborare tra loro le aree/persone",
+  "vuoi creare senso e valore",
+  "hai in mente un nuovo brand",
 ];
 
 const ideaSprintOutputs = [
-  "spunti di miglioramento",
+  "concept di miglioramento",
   "idea migliore chiarita e focalizzata",
+  "decisioni validate e condivise",
   "prototipo o simulazione",
   "test con clienti reali",
   "nuovo servizio/features",
-  "metodo replicabile",
 ];
 
-const fixItProblems = [
+const fixItWhen = [
   "il prodotto/servizio non converte",
   "i clienti sono confusi",
-  "l'esperienza non funziona",
-  "vuoi migliorare ciò che già offri",
-  "vuoi capire cosa non va bene",
+  "l'esperienza d'uso non funziona",
+  "non capisci cosa migliorare prima",
   "il processo interno è uno strazio",
-  "altro che ci dirai tu",
+  "non c'è coerenza",
+  "il valore percepito è basso",
 ];
 
 const fixItOutputs = [
   "analisi dell'esperienza cliente (CX)",
-  "frizioni migliorate",
+  "mappa delle frizioni reali (clienti o processi)",
   "offerta/servizio/prodotto ristrutturati",
-  "azioni concrete da implementare subito",
   "semplificazione della complessità",
-  "prototipo o simulazione",
-  "test con clienti reali",
+  "prototipo/simulazione con test",
+  "azioni concrete implementabili subito",
 ];
 
 function BulletList({ items }: { items: string[] }) {
@@ -62,46 +62,50 @@ function BulletList({ items }: { items: string[] }) {
 export function ProductsSection() {
   return (
     <section className="border-t">
-      <div className="container mx-auto px-4 py-20 text-center md:py-28">
-        <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-          I prodotti
-        </p>
-        <div className="mx-auto mt-10 grid grid-cols-1 items-stretch gap-6 text-left md:grid-cols-2 max-w-3xl">
+      <div className="container mx-auto px-4 py-20 md:py-28">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+            Due percorsi, un obiettivo:
+            <br />
+            decidere meglio.
+          </h2>
+        </div>
+        <div className="mt-10 grid grid-cols-1 items-stretch gap-6 text-left md:grid-cols-2 max-w-3xl">
           {/* Card 1 — Idea Sprint */}
           <Card size="sm" className="flex flex-col">
             <CardHeader>
               <CardTitle className="text-lg font-bold">Idea Sprint</CardTitle>
               <p className="text-xs text-muted-foreground">
-                Confuto mette a fuoco l&apos;idea migliore e la testa prima che
-                tu la metta sul mercato.
+                Per chi vuole generare idee, mettere a fuoco l&apos;idea
+                migliore e validarla prima di lanciarla sul mercato.
               </p>
-              <p className="mt-0.5 text-xs font-medium">Da 3 giorni</p>
             </CardHeader>
             <CardContent className="flex-1 space-y-5">
               <div>
-                <p className="text-xs font-medium">Alcuni problemi di partenza:</p>
-                <BulletList items={ideaSprintProblems} />
+                <p className="text-xs font-medium">Quando serve:</p>
+                <BulletList items={ideaSprintWhen} />
               </div>
               <Separator />
               <div>
-                <p className="text-xs font-medium">Output:</p>
+                <p className="text-xs font-medium">Cosa ottieni:</p>
                 <BulletList items={ideaSprintOutputs} />
               </div>
               <Separator />
               <div className="space-y-0.5">
+                <p className="text-xs text-muted-foreground">
+                  Durata: da 3 giorni
+                </p>
                 <p className="text-sm font-semibold">
                   Prezzo indicativo: da &euro;4.500
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Assessment iniziale gratuito
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Sconto 10% sul primo lavoro assieme
+                  Include: assessment iniziale gratuito, sconto del 10% sul
+                  primo progetto
                 </p>
               </div>
             </CardContent>
             <CardFooter>
-              <Button size="sm">Dimmi di più</Button>
+              <Button size="sm">Scopri Idea Sprint</Button>
             </CardFooter>
           </Card>
 
@@ -110,47 +114,43 @@ export function ProductsSection() {
             <CardHeader>
               <CardTitle className="text-lg font-bold">Fix it</CardTitle>
               <p className="text-xs text-muted-foreground">
-                Confuto rende il tuo prodotto o servizio più chiaro, efficace e
-                usabile. Qui si fa design e redesign di prodotti e servizi.
+                Per chi ha un prodotto, un servizio o un processo che non
+                funziona abbastanza.
               </p>
-              <p className="mt-0.5 text-xs font-medium">Da 3 sessioni</p>
             </CardHeader>
             <CardContent className="flex-1 space-y-5">
               <div>
-                <p className="text-xs font-medium">Alcuni problemi di partenza:</p>
-                <BulletList items={fixItProblems} />
+                <p className="text-xs font-medium">Quando serve:</p>
+                <BulletList items={fixItWhen} />
               </div>
               <Separator />
               <div>
-                <p className="text-xs font-medium">Output:</p>
+                <p className="text-xs font-medium">Cosa ottieni:</p>
                 <BulletList items={fixItOutputs} />
               </div>
               <Separator />
               <div className="space-y-0.5">
+                <p className="text-xs text-muted-foreground">
+                  Durata: da 4 sessioni
+                </p>
                 <p className="text-sm font-semibold">
-                  Prezzo indicativo: da &euro;5.000
+                  Prezzo indicativo: da &euro;5.500
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Assessment iniziale gratuito
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Sconto 10% sul primo lavoro assieme
+                  Include: assessment iniziale gratuito, sconto del 10% sul
+                  primo progetto
                 </p>
               </div>
             </CardContent>
             <CardFooter>
-              <Button size="sm">Dimmi di più</Button>
+              <Button size="sm">Scopri Fix it</Button>
             </CardFooter>
           </Card>
         </div>
-        <div className="mx-auto mt-10 max-w-3xl flex items-center justify-center gap-3">
-          <p className="text-sm text-muted-foreground">
-            Non trovi quello che ti interessa? Parliamone.
-          </p>
-          <Button variant="outline" size="sm">
-            Prenota una call
-          </Button>
-        </div>
+        <p className="mt-10 max-w-3xl text-sm text-muted-foreground">
+          Non sai quale scegliere? Non trovi quello che ti interessa? Ne
+          parliamo in una call.
+        </p>
       </div>
     </section>
   );

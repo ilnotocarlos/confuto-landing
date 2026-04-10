@@ -235,11 +235,14 @@ function Deck({
 export function CaseStudiesSection() {
   return (
     <section className="border-t">
-      <div className="container mx-auto px-4 py-20 text-center md:py-28">
-        <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-          Alcuni esempi di lavoro, con risultati
-        </p>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 gap-6 text-left">
+      <div className="container mx-auto px-4 py-20 md:py-28">
+        <h2 className="max-w-4xl text-3xl font-bold tracking-tight md:text-4xl">
+          <span className="text-foreground">
+            Ogni idea è geniale, finché non serve davvero a qualcosa.
+          </span>{" "}
+          <span className="text-muted-foreground">Guarda i risultati.</span>
+        </h2>
+        <div className="mt-10 grid max-w-2xl grid-cols-2 gap-6 text-left">
           <Deck title="Idea Sprint" cases={ideaSprintCases} />
           <Deck title="Fix it" cases={fixItCases} />
         </div>
