@@ -88,3 +88,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* V2 Design System */
+@theme inline {
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --color-v2-bg: #FAFAF7;
+  --color-v2-bg-alt: #E8EEF2;
+  --color-v2-bg-accent: #FAE5DC;
+  --color-v2-text: #1A1A1A;
+  --color-v2-text-muted: #6B6B6B;
+  --color-v2-accent: #E8956A;
+  --color-v2-deep: #2C3E50;
+  --color-v2-border: #D4D4D0;
+  --color-v2-pattern: #D4D4D0;
+}
