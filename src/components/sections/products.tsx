@@ -1,191 +1,156 @@
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+
+const ideaSprintProblems = [
+  "vuoi generare nuove idee",
+  "vuoi tradurre i concept in idee",
+  "hai una nuova idea per un servizio/prodotto/processo e vuoi vederne un prototipo",
+  "vuoi scegliere meglio ed evitare errori costosi",
+  "vuoi far emergere le idee dai team",
+  "altro (il mondo è bello perché vario)",
+];
+
+const ideaSprintOutputs = [
+  "spunti di miglioramento",
+  "idea migliore chiarita e focalizzata",
+  "prototipo o simulazione",
+  "test con clienti reali",
+  "nuovo servizio/features",
+  "metodo replicabile",
+];
+
+const fixItProblems = [
+  "il prodotto/servizio non converte",
+  "i clienti sono confusi",
+  "l'esperienza non funziona",
+  "vuoi migliorare ciò che già offri",
+  "vuoi capire cosa non va bene",
+  "il processo interno è uno strazio",
+  "altro che ci dirai tu",
+];
+
+const fixItOutputs = [
+  "analisi dell'esperienza cliente (CX)",
+  "frizioni migliorate",
+  "offerta/servizio/prodotto ristrutturati",
+  "azioni concrete da implementare subito",
+  "semplificazione della complessità",
+  "prototipo o simulazione",
+  "test con clienti reali",
+];
+
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+      {items.map((item) => (
+        <li key={item} className="flex gap-1.5">
+          <span className="text-foreground">—</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export function ProductsSection() {
   return (
-    <section id="prodotti" className="min-h-screen flex items-center bg-cream">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 py-24 w-full">
-        <div className="text-center">
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-sand font-mono text-xs text-charcoal/40 mb-6">
-            04/
-          </span>
-
-          <h2 className="font-heading text-[2.5rem] md:text-[3rem] leading-[1.15] tracking-tight text-forest">
-            <span className="font-light">Due percorsi, un obiettivo:</span>
-            <br />
-            <span className="font-bold">decidere meglio.</span>
-          </h2>
-          <p className="mt-4 text-lg text-charcoal/60 max-w-xl mx-auto">
-            Non sai quale scegliere? Ne parliamo nella call.
-          </p>
-        </div>
-
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
-          {/* IDEA SPRINT */}
-          <div className="bg-white rounded-2xl overflow-hidden flex flex-col min-h-[600px] transition-transform duration-200 hover:scale-[1.02]">
-            <div className="h-3 bg-mint" />
-            <div className="p-8 flex-1 flex flex-col">
-              <h3 className="font-heading text-[2rem] font-bold text-forest">
-                Idea Sprint
-              </h3>
-              <p className="mt-2 text-lg text-charcoal/70">
-                Per chi ha un&apos;idea ma non sa se funziona.
-              </p>
-
-              <h4 className="mt-6 font-heading text-lg font-medium text-forest">
-                Quando serve
-              </h4>
-              <div className="mt-3 space-y-3">
-                <p className="border-l-2 border-mint pl-4 italic text-charcoal/80">
-                  &ldquo;Ho 3 idee, quale scelgo?&rdquo;
-                </p>
-                <p className="border-l-2 border-mint pl-4 italic text-charcoal/80">
-                  &ldquo;Voglio testare prima di investire&rdquo;
-                </p>
-                <p className="border-l-2 border-mint pl-4 italic text-charcoal/80">
-                  &ldquo;Il team ha proposte ma non riusciamo a
-                  convergere&rdquo;
-                </p>
-              </div>
-
-              <h4 className="mt-6 font-heading text-lg font-medium text-forest">
-                Cosa ottieni
-              </h4>
-              <div className="mt-3 space-y-2 text-charcoal/80">
-                <p>
-                  <span className="font-mono text-sm text-charcoal/40 mr-2">
-                    01
-                  </span>
-                  1 idea selezionata e validata con clienti reali
-                </p>
-                <p>
-                  <span className="font-mono text-sm text-charcoal/40 mr-2">
-                    02
-                  </span>
-                  Prototipo o simulazione testata
-                </p>
-                <p>
-                  <span className="font-mono text-sm text-charcoal/40 mr-2">
-                    03
-                  </span>
-                  Metodo replicabile dal tuo team
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-sand/50 flex justify-between text-sm">
-                <p>
-                  <span className="font-medium text-forest">Tempi</span>
-                  <br />
-                  <span className="text-charcoal/60">Da 3 giorni</span>
-                </p>
-                <p>
-                  <span className="font-medium text-forest">Investimento</span>
-                  <br />
-                  <span className="text-charcoal/60">Da &euro;4.500</span>
-                </p>
-              </div>
-
-              <p className="mt-4 text-xs text-charcoal/40">
-                Include: Assessment iniziale gratuito &middot; Sconto 10% sul
-                primo progetto
-              </p>
-
-              <div className="mt-auto pt-6">
-                <Button className="bg-forest text-cream rounded-full px-8 py-4 h-auto text-base font-medium hover:bg-forest/90 active:scale-[0.98] transition-all duration-200">
-                  Scopri Idea Sprint
-                  <ArrowUpRight className="ml-2 size-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* FIX IT */}
-          <div className="bg-white rounded-2xl overflow-hidden flex flex-col min-h-[600px] transition-transform duration-200 hover:scale-[1.02]">
-            <div className="h-3 bg-blush" />
-            <div className="p-8 flex-1 flex flex-col">
-              <h3 className="font-heading text-[2rem] font-bold text-forest">
-                Fix It
-              </h3>
-              <p className="mt-2 text-lg text-charcoal/70">
-                Per chi ha già un prodotto ma non funziona abbastanza.
-              </p>
-
-              <h4 className="mt-6 font-heading text-lg font-medium text-forest">
-                Quando serve
-              </h4>
-              <div className="mt-3 space-y-3">
-                <p className="border-l-2 border-blush pl-4 italic text-charcoal/80">
-                  &ldquo;I clienti non convertono e non capiamo perché&rdquo;
-                </p>
-                <p className="border-l-2 border-blush pl-4 italic text-charcoal/80">
-                  &ldquo;L&apos;esperienza d&apos;uso è un disastro&rdquo;
-                </p>
-                <p className="border-l-2 border-blush pl-4 italic text-charcoal/80">
-                  &ldquo;Il processo interno rallenta tutto&rdquo;
-                </p>
-              </div>
-
-              <h4 className="mt-6 font-heading text-lg font-medium text-forest">
-                Cosa ottieni
-              </h4>
-              <div className="mt-3 space-y-2 text-charcoal/80">
-                <p>
-                  <span className="font-mono text-sm text-charcoal/40 mr-2">
-                    01
-                  </span>
-                  Mappa delle frizioni reali (clienti o processi interni)
-                </p>
-                <p>
-                  <span className="font-mono text-sm text-charcoal/40 mr-2">
-                    02
-                  </span>
-                  Prodotto, servizio o processo ristrutturato
-                </p>
-                <p>
-                  <span className="font-mono text-sm text-charcoal/40 mr-2">
-                    03
-                  </span>
-                  Azioni concrete implementabili da subito
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-sand/50 flex justify-between text-sm">
-                <p>
-                  <span className="font-medium text-forest">Tempi</span>
-                  <br />
-                  <span className="text-charcoal/60">Da 3 sessioni</span>
-                </p>
-                <p>
-                  <span className="font-medium text-forest">Investimento</span>
-                  <br />
-                  <span className="text-charcoal/60">Da &euro;5.000</span>
-                </p>
-              </div>
-
-              <p className="mt-4 text-xs text-charcoal/40">
-                Include: Assessment iniziale gratuito &middot; Sconto 10% sul
-                primo progetto
-              </p>
-
-              <div className="mt-auto pt-6">
-                <Button className="bg-forest text-cream rounded-full px-8 py-4 h-auto text-base font-medium hover:bg-forest/90 active:scale-[0.98] transition-all duration-200">
-                  Scopri Fix It
-                  <ArrowUpRight className="ml-2 size-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p className="mt-10 text-center text-charcoal/60">
-          Non trovi il tuo caso?{" "}
-          <a
-            href="#cta"
-            className="text-forest font-medium hover:underline underline-offset-4 transition-colors duration-200"
-          >
-            Parliamone &rarr;
-          </a>
+    <section className="border-t">
+      <div className="container mx-auto px-4 py-20 text-center md:py-28">
+        <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+          I prodotti
         </p>
+        <div className="mx-auto mt-10 grid grid-cols-1 items-stretch gap-6 text-left md:grid-cols-2 max-w-3xl">
+          {/* Card 1 — Idea Sprint */}
+          <Card size="sm" className="flex flex-col">
+            <CardHeader>
+              <CardTitle className="text-lg font-bold">Idea Sprint</CardTitle>
+              <p className="text-xs text-muted-foreground">
+                Confuto mette a fuoco l&apos;idea migliore e la testa prima che
+                tu la metta sul mercato.
+              </p>
+              <p className="mt-0.5 text-xs font-medium">Da 3 giorni</p>
+            </CardHeader>
+            <CardContent className="flex-1 space-y-5">
+              <div>
+                <p className="text-xs font-medium">Alcuni problemi di partenza:</p>
+                <BulletList items={ideaSprintProblems} />
+              </div>
+              <Separator />
+              <div>
+                <p className="text-xs font-medium">Output:</p>
+                <BulletList items={ideaSprintOutputs} />
+              </div>
+              <Separator />
+              <div className="space-y-0.5">
+                <p className="text-sm font-semibold">
+                  Prezzo indicativo: da &euro;4.500
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Assessment iniziale gratuito
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Sconto 10% sul primo lavoro assieme
+                </p>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button size="sm">Dimmi di più</Button>
+            </CardFooter>
+          </Card>
+
+          {/* Card 2 — Fix it */}
+          <Card size="sm" className="flex flex-col">
+            <CardHeader>
+              <CardTitle className="text-lg font-bold">Fix it</CardTitle>
+              <p className="text-xs text-muted-foreground">
+                Confuto rende il tuo prodotto o servizio più chiaro, efficace e
+                usabile. Qui si fa design e redesign di prodotti e servizi.
+              </p>
+              <p className="mt-0.5 text-xs font-medium">Da 3 sessioni</p>
+            </CardHeader>
+            <CardContent className="flex-1 space-y-5">
+              <div>
+                <p className="text-xs font-medium">Alcuni problemi di partenza:</p>
+                <BulletList items={fixItProblems} />
+              </div>
+              <Separator />
+              <div>
+                <p className="text-xs font-medium">Output:</p>
+                <BulletList items={fixItOutputs} />
+              </div>
+              <Separator />
+              <div className="space-y-0.5">
+                <p className="text-sm font-semibold">
+                  Prezzo indicativo: da &euro;5.000
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Assessment iniziale gratuito
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Sconto 10% sul primo lavoro assieme
+                </p>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button size="sm">Dimmi di più</Button>
+            </CardFooter>
+          </Card>
+        </div>
+        <div className="mx-auto mt-10 max-w-3xl flex items-center justify-center gap-3">
+          <p className="text-sm text-muted-foreground">
+            Non trovi quello che ti interessa? Parliamone.
+          </p>
+          <Button variant="outline" size="sm">
+            Prenota una call
+          </Button>
+        </div>
       </div>
     </section>
   );
