@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -6,10 +8,7 @@ export function Navbar() {
           <div className="h-8 w-8 rounded-full bg-muted" />
           <span className="text-lg font-semibold tracking-tight">Confuto</span>
         </div>
-        <nav className="hidden items-center gap-4 text-sm md:flex">
-          <a href="#" className="text-muted-foreground hover:text-foreground">
-            Prenota Assessment
-          </a>
+        <nav className="hidden items-center gap-6 text-sm md:flex">
           <a href="#" className="text-muted-foreground hover:text-foreground">
             Prodotti
           </a>
@@ -20,6 +19,9 @@ export function Navbar() {
             Contattaci
           </a>
         </nav>
+        <Button size="sm" className="hidden md:inline-flex">
+          Prenota una call
+        </Button>
       </div>
     </header>
   );

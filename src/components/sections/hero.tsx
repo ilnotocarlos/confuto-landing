@@ -19,9 +19,18 @@ export function HeroSection() {
           processi e servizi in giorni, non in mesi. Niente teoria, solo
           decisioni chiare e condivise.
         </p>
-        <Button size="lg" className="mt-10 h-11 px-6 text-base">
-          Prenota un assessment gratuito e scopri come funziona
-        </Button>
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <Button size="lg" className="h-11 px-6 text-base">
+            Prenota un assessment gratuito
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="h-11 px-6 text-base"
+          >
+            Scopri come funziona
+          </Button>
+        </div>
       </div>
     </section>
   );
